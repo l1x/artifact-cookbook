@@ -29,6 +29,7 @@ attribute :deploy_to, :kind_of          => String, :required => true
 attribute :version, :kind_of            => String
 attribute :owner, :kind_of              => String, :required => true, :regex => Chef::Config[:user_valid_regex]
 attribute :group, :kind_of              => String, :required => true, :regex => Chef::Config[:user_valid_regex]
+attribute :mode, :kind_of               => String, :required => false, :regex => /^\d{3,4}$/
 attribute :environment, :kind_of        => Hash, :default => Hash.new
 attribute :symlinks, :kind_of           => Hash, :default => Hash.new
 attribute :shared_directories, :kind_of => Array, :default => %w{ system pids log }
